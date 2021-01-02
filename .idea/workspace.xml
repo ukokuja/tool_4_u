@@ -1,64 +1,85 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
-    <generated>
-      <config projectName="project" targetName="project" />
-    </generated>
-  </component>
-  <component name="CMakeSettings">
-    <configurations>
-      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
-    </configurations>
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="70aa9bfa-38fb-41df-917a-d3b856c40caf" name="Default Changelist" comment="" />
+    <list default="true" id="99643474-43ce-487a-9d5a-6087e839958e" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ClangdSettings">
-    <option name="formatViaClangd" value="false" />
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
-  <component name="ProjectId" id="1m8wDOeUB0twwyBoSB4p8pVAu3M" />
+  <component name="ProjectId" id="1mVKDB1a4rMgcdGysAXhjCJECBP" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
-    <option name="showMembers" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="cf.first.check.clang-format" value="false" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.smartKeys" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/model" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.spelling" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/controller/cms" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/model" />
+      <recent name="$PROJECT_DIR$/controller/cms" />
+      <recent name="$PROJECT_DIR$/controller/events" />
+      <recent name="$PROJECT_DIR$/controller/inventory" />
+      <recent name="$PROJECT_DIR$/controller/orders" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="tool_4_you_python" type="Python.DjangoServer" factoryName="Django server">
+      <module name="tool_4_you_python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
   </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="70aa9bfa-38fb-41df-917a-d3b856c40caf" name="Default Changelist" comment="" />
-      <created>1608888405770</created>
+      <changelist id="99643474-43ce-487a-9d5a-6087e839958e" name="Default Changelist" comment="" />
+      <created>1609573195996</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1608888405770</updated>
-      <workItem from="1608888408173" duration="5275000" />
+      <updated>1609573195996</updated>
+      <workItem from="1609573197392" duration="2973000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="653" y="224" key="#com.intellij.ide.util.MemberChooser" timestamp="1609023924657">
-      <screen x="0" y="0" width="1680" height="1050" />
-    </state>
-    <state x="653" y="224" key="#com.intellij.ide.util.MemberChooser/0.0.1680.1050@0.0.1680.1050" timestamp="1609023924657" />
-    <state x="653" y="230" key="#com.intellij.ide.util.MemberChooser/0.23.1680.969@0.23.1680.969" timestamp="1609017202867" />
-    <state x="341" y="133" key="SettingsEditor" timestamp="1609023913570">
-      <screen x="0" y="0" width="1680" height="1050" />
-    </state>
-    <state x="341" y="133" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1609023913570" />
-    <state x="341" y="146" key="SettingsEditor/0.23.1680.969@0.23.1680.969" timestamp="1609015826112" />
   </component>
 </project>
