@@ -1,12 +1,8 @@
-#!/usr/bin/env python3
-
-import os 
-from consolemenu import *
-from consolemenu.items import *
-
 
 def menu_a():
     # Import the necessary packages
+    from consolemenu import *
+    from consolemenu.items import *
 
     # Create the menu
     menu = ConsoleMenu("Title", "Subtitle")
@@ -37,12 +33,3 @@ def menu_a():
 
     # Finally, we call show to show the menu and allow the user to interact
     menu.show()
-
-class ViewManager(object):
-    def __init__(self, controller):
-        self.__controller = controller
-
-    def start(self):
-        menu_a()
-
-   
