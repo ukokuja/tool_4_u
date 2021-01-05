@@ -4,6 +4,8 @@ import os
 from consolemenu import *
 from consolemenu.items import *
 
+from Observable import Observer
+
 
 def menu_a():
     # Import the necessary packages
@@ -38,11 +40,13 @@ def menu_a():
     # Finally, we call show to show the menu and allow the user to interact
     menu.show()
 
-class ViewManager(object):
+class ViewManager(Observer):
     def __init__(self, controller):
         self.__controller = controller
 
     def start(self):
         menu_a()
 
+    def update(self, object):
+        print("updated: {}".format(object))
    

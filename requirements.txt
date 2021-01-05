@@ -1,3 +1,5 @@
 pytz==2020.5
-simple-term-menu==0.10.4
 SQLAlchemy==1.3.22
+console-menu==0.6.0
+sqlalchemy-utils==0.36.8
+mysqlclient==2.0.3
