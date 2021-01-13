@@ -12,7 +12,6 @@ def run():
         session = init_db()
 
         model = ModelManager(session)
-        item = model.item.get(1)
         controller = ControllerManager(model)
         view = ViewManager(controller)
         model.add_observer(view)

@@ -21,5 +21,5 @@ class ModelManager(Observable):
         # self._plan = PlanManager(session, Plan)
         # self._role = RoleManager(session, Role)
         # self._setting = SettingManager(session, Setting)
-        # self._user = UserManager(session, User)
+        # self.user = UserManager(session, User)
         # self._warehouse = WarehouseManager(session, Warehouse)

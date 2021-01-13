@@ -23,3 +23,10 @@ class User(T4U_BASE):
     def __repr__(self):
         return "<User(id='%s', fullname='%s %s')>" % (
             self.id, self.first_name, self.last_name)
+
+
+class UserManager(ViewSet):
+
+    def __init__(self, session, entity):
+        self._session = session
+        self._entity = entity

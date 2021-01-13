@@ -3,7 +3,6 @@ from sqlalchemy import Column, Integer, String, Enum
 from sqlalchemy import ForeignKey
 
 from database import T4U_BASE
-from controller import ViewSet
 
 class DataType(enum.Enum):
     number = Integer
