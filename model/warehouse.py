@@ -3,18 +3,30 @@ from sqlalchemy import ForeignKey
 from sqlalchemy.orm import relationship
 
 from database import T4U_BASE
-from controller import ViewSet
-association_table = Table('warehouse_items', T4U_BASE.metadata,
-                          Column('warehouse_id', Integer, ForeignKey('warehouse.id')),
-                          Column('item_id', Integer, ForeignKey('item.id')),
-                          Column('count', Integer)
-                          )
 
+class WarehouseItems(T4U_BASE):
+    __tablename__ = 'warehouse_items'
+    warehouse_id = Column(Integer, ForeignKey('warehouse.id'), primary_key=True)
+    item_id = Column(Integer, ForeignKey('item.id'), primary_key=True)
+    count = Column('count', Integer)
+    item = relationship("Item", back_populates="warehouses")
+    warehouse = relationship("Warehouse", back_populates="items")
+
+    def get_full_description(self):
+        return "hereeee WarehouseItems"
+
+    def __repr__(self):
+        return "Warehouse: %s - %s | %s availables" % (self.warehouse.neighbourhood.name, self.warehouse.neighbourhood.city.name, self.count)
 
 class Warehouse(T4U_BASE):
     __tablename__ = 'warehouse'
     id = Column(Integer, primary_key=True)
     name = Column(String(255))
-    location = Column(Integer, ForeignKey('location.id'))
+    items = relationship("WarehouseItems", back_populates="warehouse")
+    location = relationship("Location", uselist=False, back_populates="warehouse")
+
     neighbourhood_id = Column(Integer, ForeignKey('neighbourhood.id'))
-    items = relationship("Item", secondary=association_table)
+    neighbourhood = relationship("Neighbourhood", back_populates="warehouse")
+
+    def get_full_description(self):
+        return "hereeee Warehouse"

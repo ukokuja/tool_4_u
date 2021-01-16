@@ -24,7 +24,7 @@ class AuthMenu(BaseMenu):
         username = self._prompt_utils.input(prompt='Username', validators=None)
         password = self._prompt_utils.input_password(message='Password')
         self._controller.auth.sign_in(username=username.input_string,
-                                      password=password.input_string)
+                                      password=password)
 
     def __init__(self, menu, controller):
         super().__init__(menu=menu, controller=controller)

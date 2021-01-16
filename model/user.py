@@ -17,16 +17,11 @@ class User(T4U_BASE):
     settings = relationship("Setting")
 
     __mapper_args__ = {
-        'polymorphic_identity': 'user'
+        'polymorphic_identity': 'user',
+        'polymorphic_load': 'inline',
+        'with_polymorphic': '*'
     }
 
     def __repr__(self):
         return "<User(id='%s', fullname='%s %s')>" % (
             self.id, self.first_name, self.last_name)
-
-
-class UserManager(ViewSet):
-
-    def __init__(self, session, entity):
-        self._session = session
-        self._entity = entity

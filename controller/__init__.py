@@ -14,16 +14,20 @@ class ViewSet(object):
         return self._session.query(self._entity).filter_by(**kwargs).all()
 
     def list(self):
-        self._session.query(self._entity).all()
+        return self._session.query(self._entity).all()
 
     def create(self, **kwargs):
-        self._session.add(self._entity(**kwargs))
+        entity = self._entity(**kwargs)
+        self._session.add(entity)
+        self._session.flush()
+        self._session.refresh(entity)
+        return entity
 
     def update(self, **kwargs):
-        self._session.update(self._entity(**kwargs))
+        return self._session.update(self._entity(**kwargs))
 
     def delete(self, id):
-        self._session.delete(self._entity, id=id)
+        return self._session.delete(self._entity, id=id)
 
 
 class ControllerManager(object):
@@ -35,4 +39,13 @@ class ControllerManager(object):
         self.inventory = Inventory(model)
         self.events = Events(model)
         self.cms = CMS(model)
+        self.client = None
 
+    def register_auth(self, client):
+        if not self.client:
+            self.client = client
+            return True
+        return False
+
+    def remove_auth(self):
+        self.client = None

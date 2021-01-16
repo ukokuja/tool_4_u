@@ -1,12 +1,13 @@
-from consolemenu import PromptUtils, Screen
 from sqlalchemy import inspect
 
+from view.drawer.base_drawer import BaseDrawer
 
-class BaseDrawer():
 
-    def __init__(self, controller):
-        self._prompt = PromptUtils(Screen())
-        self._controller = controller
+class BaseClientDrawer(BaseDrawer):
+
+    def __init__(self, controller, client):
+        super().__init__(controller=controller)
+        self.client = client
 
     def draw(self, instance):
         inspected_instance = inspect(instance)

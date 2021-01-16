@@ -1,8 +1,9 @@
 from view.drawer.base_drawer import BaseDrawer
 
 
-class ItemDrawer(BaseDrawer):
+class ClientDrawer(BaseDrawer):
 
     def draw(self, instance):
-        self._prompt.printf(instance.get_full_description())
-        return instance.warehouses, 'warehouses'
+        if self._prompt.prompt_for_bilateral_choice("%s created, would you like to sign in?" % instance, "Yes", "No") == "Yes":
+            return instance, 'signed_in'
+        return None, None

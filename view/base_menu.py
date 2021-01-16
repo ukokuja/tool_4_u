@@ -6,3 +6,4 @@ class BaseMenu(object):
         self._menu = menu
         self._controller = controller
         self._prompt_utils = PromptUtils(Screen())
+
