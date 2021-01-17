@@ -1,11 +1,11 @@
 from sqlalchemy import Column, String, Integer, ForeignKey
 from sqlalchemy.orm import relationship
 
-from database import T4U_BASE
+from controller.viewset import ViewSet
+from model.user import User
 
-from controller import ViewSet
 
-class Client(T4U_BASE, ViewSet):
+class Client(User, ViewSet):
     __tablename__ = 'client'
     id = Column(Integer, ForeignKey('user.id'), primary_key=True)
     plan_id = Column(Integer, ForeignKey('plan.id'))

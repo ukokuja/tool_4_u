@@ -5,9 +5,9 @@ from view.drawer.base_drawer import BaseDrawer
 
 class BaseClientDrawer(BaseDrawer):
 
-    def __init__(self, controller, client):
+    def __init__(self, controller):
         super().__init__(controller=controller)
-        self.client = client
+        self.client = controller.get_client()
 
     def draw(self, instance):
         inspected_instance = inspect(instance)

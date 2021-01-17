@@ -3,7 +3,7 @@ from sqlalchemy import ForeignKey
 from sqlalchemy.orm import relationship
 
 from database import T4U_BASE
-from controller import ViewSet
+
 
 association_table = Table('permission_allowed_action', T4U_BASE.metadata,
                           Column('permission_id', Integer, ForeignKey('permission.id')),

@@ -1,7 +1,7 @@
 from sqlalchemy import Column, Integer, String, ForeignKey
 
 from database import T4U_BASE
-from controller import ViewSet
+
 
 class Image(T4U_BASE):
     __tablename__ = 'image'

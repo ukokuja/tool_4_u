@@ -4,7 +4,7 @@ from sqlalchemy import Column, Integer, String
 from sqlalchemy.orm import relationship
 
 from database import T4U_BASE
-from controller import ViewSet
+
 from model.image import Image
 from model.comment import Comment
 

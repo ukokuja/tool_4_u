@@ -1,6 +1,6 @@
 from sqlalchemy import Column, Integer, String
 
-from controller import ViewSet
+
 from database import T4U_BASE
 
 

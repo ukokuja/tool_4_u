@@ -6,12 +6,12 @@ class Observable(object):
     def add_observer(self, view):
         self.observers.append(view)
 
-    def notify(self, obj):
+    def notify(self, obj, label):
         for observer in self.observers:
-            observer.update(obj)
+            observer.update(obj, label)
 
 
 class Observer(object):
 
-    def update(self, obj):
+    def update(self, obj, label):
         raise NotImplementedError

@@ -4,7 +4,7 @@ from sqlalchemy import ForeignKey
 from sqlalchemy.orm import relationship
 
 from database import T4U_BASE
-from controller import ViewSet
+
 
 association_table = Table('role_permission', T4U_BASE.metadata,
                           Column('role_id', Integer, ForeignKey('role.id')),

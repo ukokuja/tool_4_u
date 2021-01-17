@@ -13,17 +13,22 @@ class AuthMenu(BaseMenu):
         return method
 
     def sign_up(self):
-        username = self._prompt_utils.input(prompt='Username', validators=None)
-        full_name = self._prompt_utils.input(prompt='Full name', validators=None)
-        password = self._prompt_utils.input_password(message='Password')
+        email = self._prompt_utils.input(prompt='Email', validators=None)
+        first_name = self._prompt_utils.input(prompt='First name', validators=None)
+        last_name = self._prompt_utils.input(prompt='Last name', validators=None)
+        phone_number = self._prompt_utils.input(prompt='Phone', validators=None)
+        password = self._prompt_utils.prompt_and_confirm_password(message='Password')
 
-        self._controller.auth.sign_up(username=username.input_string,
-                                      full_name=full_name.input_string, password=password)
+        self._controller.auth.sign_up(email=email.input_string,
+                                      phone_number=phone_number.input_string,
+                                      first_name=first_name.input_string,
+                                      last_name=last_name.input_string,
+                                      password=password)
 
     def sign_in(self):
-        username = self._prompt_utils.input(prompt='Username', validators=None)
+        email = self._prompt_utils.input(prompt='Email', validators=None)
         password = self._prompt_utils.input_password(message='Password')
-        self._controller.auth.sign_in(username=username.input_string,
+        self._controller.auth.sign_in(email=email.input_string,
                                       password=password)
 
     def __init__(self, menu, controller):

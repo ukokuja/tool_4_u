@@ -7,7 +7,7 @@ class OrderDrawer(BaseClientDrawer):
     def draw(self, instance):
         if self._prompt.prompt_for_bilateral_choice("Would you like to order it?", "Yes", "No") == "Yes":
             self._controller.orders.rental_request(
-                client_id=self.client.get('id'),
+                client_id=self._controller.get_client().id,
                 item_id=instance.item_id,
                 warehouse_id=instance.warehouse_id
             )

@@ -3,7 +3,7 @@ from sqlalchemy import ForeignKey
 from sqlalchemy.orm import relationship
 
 from database import T4U_BASE
-from controller import ViewSet
+
 
 class User(T4U_BASE):
 

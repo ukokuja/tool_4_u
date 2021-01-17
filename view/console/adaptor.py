@@ -13,12 +13,9 @@ class SelectionActionItem(SelectionItem):
 
 
 class SelectionActionMenu(ConsoleMenu):
-    def __init__(self, actions, title=None, subtitle=None, screen=None, formatter=None,
-                 prologue_text=None, epilogue_text=None, show_exit_option=True, exit_option_text='Exit'):
+    def __init__(self, actions, **kwargs):
         self.actions = actions
-        super(SelectionActionMenu, self).__init__(title=title, subtitle=subtitle, screen=screen, formatter=formatter,
-                                                  prologue_text=prologue_text, epilogue_text=epilogue_text,
-                                                  show_exit_option=show_exit_option, exit_option_text=exit_option_text)
+        super(SelectionActionMenu, self).__init__(**kwargs)
         for index, item in enumerate(self.actions):
             self.append_item(
                 SelectionActionItem(text=item.get('title'), action=item.get('action'), index=index, menu=self))

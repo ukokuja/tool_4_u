@@ -1,6 +1,6 @@
 from sqlalchemy.orm import Session
 
-from controller import ControllerManager
+from controller.manager import ControllerManager
 from database import init_db
 from model import ModelManager
 from view.manager import ViewManager

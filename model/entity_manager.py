@@ -1,4 +1,4 @@
-from controller import ViewSet
+from controller.viewset import ViewSet
 
 
 class EntityManager(ViewSet):
