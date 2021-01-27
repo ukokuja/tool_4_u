@@ -24,10 +24,10 @@ class ModelManager(Observable):
     def __init__(self, session):
         self._allowed_action = EntityManager(session, AllowedAction)
         self._audit = EntityManager(session, Audit)
-        self._city = EntityManager(session, City)
+        self.city = EntityManager(session, City)
         self.client = EntityManager(session, Client)
         self._comment = EntityManager(session, Comment)
-        self._event = EntityManager(session, Event)
+        self.event = EntityManager(session, Event)
         self._image = EntityManager(session, Image)
         self.item = EntityManager(session, Item)
         self._location = EntityManager(session, Location)

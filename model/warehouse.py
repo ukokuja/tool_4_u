@@ -29,4 +29,7 @@ class Warehouse(T4U_BASE):
     neighbourhood = relationship("Neighbourhood", back_populates="warehouse")
 
     def get_full_description(self):
-        return "hereeee Warehouse"
+        return "" #TODO: Change
+
+    def __repr__(self):
+        return "%s in %s" % (self.location, self.neighbourhood)

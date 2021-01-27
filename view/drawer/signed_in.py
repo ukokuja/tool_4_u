@@ -1,7 +1,7 @@
-from view.drawer.base_drawer import BaseDrawer
+from view.drawer.base_drawer import BaseControlDrawer
 
 
-class SignedInDrawer(BaseDrawer):
+class SignedInControlDrawer(BaseControlDrawer):
 
     def draw(self, instance):
         if self._controller.register_auth(instance):

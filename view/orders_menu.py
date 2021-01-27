@@ -2,7 +2,7 @@ from consolemenu import Screen, PromptUtils
 from consolemenu.items import SubmenuItem
 
 from view.base_menu import BaseMenu
-from view.console.adaptor import SelectionActionMenu
+from view.console.adaptor import SelectionActionMenu, T4UMenu
 
 
 class OrdersMenu(BaseMenu):
@@ -15,7 +15,7 @@ class OrdersMenu(BaseMenu):
             {"title": "Show all orders", "action": self.show_orders},
         ])
         level_2 = SubmenuItem("My orders", level_1, menu)
-        self._menu.append_item(level_2)
+        self._menu.append_item(level_2, T4UMenu.USER_LOGGED_IN)
 
 
     def show_active_orders(self):

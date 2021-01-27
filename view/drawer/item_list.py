@@ -1,10 +1,10 @@
 from consolemenu import SelectionMenu
 
 from view.console.adaptor import SelectionActionMenu
-from view.drawer.base_drawer import BaseDrawer
+from view.drawer.base_drawer import BaseControlDrawer
 
 
-class ItemListDrawer(BaseDrawer):
+class ItemListControlDrawer(BaseControlDrawer):
 
 
     def handle(self, options, instances):

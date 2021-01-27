@@ -1,14 +1,9 @@
-from view.drawer.base_client_drawer import BaseClientDrawer
-from view.drawer.base_drawer import BaseDrawer
+from view.drawer.base_drawer import BaseControlDrawer
 
 
-class OrderDrawer(BaseClientDrawer):
+class OrderDrawer(BaseControlDrawer):
 
     def draw(self, instance):
-        if self._prompt.prompt_for_bilateral_choice("Would you like to order it?", "Yes", "No") == "Yes":
-            self._controller.orders.rental_request(
-                client_id=self._controller.get_client().id,
-                item_id=instance.item_id,
-                warehouse_id=instance.warehouse_id
-            )
+        self._prompt.printf(instance.get_full_description())
+        self._prompt.enter_to_continue("\n[Enter to continue]")
         return None, None

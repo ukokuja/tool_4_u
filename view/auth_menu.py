@@ -1,6 +1,7 @@
 from consolemenu.items import FunctionItem
 
 from view.base_menu import BaseMenu
+from view.console.adaptor import T4UMenu
 
 
 class AuthMenu(BaseMenu):
@@ -38,4 +39,4 @@ class AuthMenu(BaseMenu):
             FunctionItem("Sign in", self.sign_in)
         ]
         for options in options:
-            self._menu.append_item(options)
+            self._menu.append_item(options, T4UMenu.USER_LOGGED_OUT)

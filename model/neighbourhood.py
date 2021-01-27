@@ -14,3 +14,7 @@ class Neighbourhood(T4U_BASE):
 
     city_id = Column(Integer, ForeignKey('city.id'))
     city = relationship("City", back_populates="neighbourhood")
+
+
+    def __repr__(self):
+        return "%s, %s" % (self.name, self.city)

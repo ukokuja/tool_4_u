@@ -18,3 +18,11 @@ class Client(User, ViewSet):
         'polymorphic_load': 'selectin',
         'with_polymorphic': '*'
     }
+
+    def __getitem__(self, field):
+        """
+        Allows subscriptable model
+        :param field:
+        :return:
+        """
+        return self.__dict__.get(field, None)

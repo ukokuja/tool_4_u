@@ -1,7 +1,7 @@
-from view.drawer.list import ListDrawer
+from view.drawer.list import ListControlDrawer
 
 
-class WarehousesListDrawer(ListDrawer):
+class WarehousesListDrawer(ListControlDrawer):
 
     def handle(self, options, instances):
         if options.selected_option < len(instances):

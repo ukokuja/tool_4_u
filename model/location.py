@@ -14,3 +14,6 @@ class Location(T4U_BASE):
     warehouse_id = Column(Integer, ForeignKey('warehouse.id'))
     warehouse = relationship("Warehouse", back_populates="location")
 
+
+    def __repr__(self):
+        return "%s %s" % (self.address_street, self.address_number)

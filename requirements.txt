@@ -4,3 +4,4 @@ console-menu==0.6.0
 sqlalchemy-utils==0.36.8
 mysqlclient==2.0.3
 pyramid
+passlib

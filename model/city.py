@@ -11,3 +11,6 @@ class City(T4U_BASE):
     country = Column(String(255))
 
     neighbourhood = relationship("Neighbourhood", back_populates="city")
+
+    def __repr__(self):
+        return "%s, %s" % (self.name, self.country)

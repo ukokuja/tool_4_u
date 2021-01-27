@@ -23,6 +23,5 @@ class Item(T4U_BASE):
             self.title, (self.description[:40] + '..') if len(self.description) > 40 else self.description)
 
     def get_full_description(self):
-        #TODO: Fix
         return "\033[1m%s\033[0m:\n%s\n\n\033[1mComments\033[0m:\n%s" % (
             self.title, textwrap.fill(self.description, width=50), '\n'.join(["* {}\n".format(x.text) for x in self.comments]))

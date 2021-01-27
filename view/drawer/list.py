@@ -1,10 +1,10 @@
 from consolemenu import SelectionMenu
 
 from view.console.adaptor import SelectionActionMenu
-from view.drawer.base_drawer import BaseDrawer
+from view.drawer.base_drawer import BaseControlDrawer
 
 
-class ListDrawer(BaseDrawer):
+class ListControlDrawer(BaseControlDrawer):
 
     def __init__(self, controller, title="Please choose an option"):
         super().__init__(controller=controller)
