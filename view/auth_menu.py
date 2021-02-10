@@ -1,4 +1,6 @@
 from consolemenu.items import FunctionItem
+from consolemenu.validators.regex import RegexValidator
+from sqlalchemy_utils.types import phone_number
 
 from view.base_menu import BaseMenu
 from view.console.adaptor import T4UMenu
@@ -14,10 +16,21 @@ class AuthMenu(BaseMenu):
         return method
 
     def sign_up(self):
-        email = self._prompt_utils.input(prompt='Email', validators=None)
-        first_name = self._prompt_utils.input(prompt='First name', validators=None)
-        last_name = self._prompt_utils.input(prompt='Last name', validators=None)
-        phone_number = self._prompt_utils.input(prompt='Phone', validators=None)
+        email = self._prompt_utils.input(prompt='Email', validators=[RegexValidator("^\S+@\S+\.\S+$")])
+        while not email or not email.validation_result:
+            email = self._prompt_utils.input(prompt='Email', validators=[RegexValidator("^\S+@\S+\.\S+$")])
+        first_name = self._prompt_utils.input(prompt='First name', validators=[RegexValidator("^[a-zA-Z]{2,}$")])
+        while not first_name or not first_name.validation_result:
+            first_name = self._prompt_utils.input(prompt='First Name', validators=[RegexValidator("^[a-zA-Z]{2,}$")])
+        last_name = self._prompt_utils.input(prompt='Last name', validators=[RegexValidator("^[a-zA-Z]{2,}$")])
+        while not last_name or not last_name.validation_result:
+            last_name = self._prompt_utils.input(prompt='Last name', validators=[RegexValidator("^[a-zA-Z]{2,}$")])
+
+        phone_number = self._prompt_utils.input(prompt='Phone', validators=[RegexValidator("^[0-9]*$")])
+        print(phone_number.validation_result)
+        while not phone_number or not phone_number.validation_result:
+            phone_number = self._prompt_utils.input(prompt='Phone', validators=[RegexValidator("^[0-9]*$")])
+
         password = self._prompt_utils.prompt_and_confirm_password(message='Password')
 
         self._controller.auth.sign_up(email=email.input_string,
@@ -33,6 +46,7 @@ class AuthMenu(BaseMenu):
                                       password=password)
 
     def __init__(self, menu, controller):
+
         super().__init__(menu=menu, controller=controller)
         options = [
             FunctionItem("Sign up", self.sign_up),
