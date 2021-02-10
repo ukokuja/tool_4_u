@@ -18,17 +18,22 @@ class AuthMenu(BaseMenu):
     def sign_up(self):
         email = self._prompt_utils.input(prompt='Email', validators=[RegexValidator("^\S+@\S+\.\S+$")])
         while not email or not email.validation_result:
+            print("email is not valid, please try again")
             email = self._prompt_utils.input(prompt='Email', validators=[RegexValidator("^\S+@\S+\.\S+$")])
+
         first_name = self._prompt_utils.input(prompt='First name', validators=[RegexValidator("^[a-zA-Z]{2,}$")])
         while not first_name or not first_name.validation_result:
+            print("first name is not valid, please try again")
             first_name = self._prompt_utils.input(prompt='First Name', validators=[RegexValidator("^[a-zA-Z]{2,}$")])
+
         last_name = self._prompt_utils.input(prompt='Last name', validators=[RegexValidator("^[a-zA-Z]{2,}$")])
         while not last_name or not last_name.validation_result:
+            print("last name is not valid, please try again")
             last_name = self._prompt_utils.input(prompt='Last name', validators=[RegexValidator("^[a-zA-Z]{2,}$")])
 
         phone_number = self._prompt_utils.input(prompt='Phone', validators=[RegexValidator("^[0-9]*$")])
-        print(phone_number.validation_result)
         while not phone_number or not phone_number.validation_result:
+            print("phone number is not valid, please try again")
             phone_number = self._prompt_utils.input(prompt='Phone', validators=[RegexValidator("^[0-9]*$")])
 
         password = self._prompt_utils.prompt_and_confirm_password(message='Password')
