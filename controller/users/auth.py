@@ -11,7 +11,7 @@ class Auth(BaseController):
             first_name=first_name,
             last_name=last_name,
             email=email,
-            role_id=0,
+            role_id=1,
             password=bcrypt.encrypt(password),
         ), 'sign_up')
 
