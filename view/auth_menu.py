@@ -1,6 +1,5 @@
 from consolemenu.items import FunctionItem
 from consolemenu.validators.regex import RegexValidator
-from sqlalchemy_utils.types import phone_number
 
 from view.base_menu import BaseMenu
 from view.console.adaptor import T4UMenu
