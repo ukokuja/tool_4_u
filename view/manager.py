@@ -20,6 +20,7 @@ from view.drawer.warehouses_list import WarehousesListDrawer
 from view.orders_menu import OrdersMenu
 from view.auth_menu import AuthMenu
 from view.search_menu import InventoryMenu
+from view.user_mgmt_menu import UserMgmtMenu
 
 SUBTITLE = "why buy if you can rent? :)"
 TITLE = "Tool 4 You!"
@@ -32,6 +33,7 @@ class ViewManager(Observer):
                              user_mgmt_controller=controller.get_user_mgmt_functions())
         self.auth_menu = AuthMenu(menu=self._menu, controller=self._controller)
         self.inventory_menu = InventoryMenu(menu=self._menu, controller=self._controller)
+        self.user_mgmt_menu = UserMgmtMenu(menu=self._menu, controller=self._controller)
         self.orders_menu = OrdersMenu(menu=self._menu, controller=self._controller)
         self.cms_menu = CMSMenu(menu=self._menu, controller=self._controller)
         self.drawer = {
