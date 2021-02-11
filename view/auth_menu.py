@@ -7,6 +7,9 @@ from view.console.adaptor import T4UMenu
 
 
 class AuthMenu(BaseMenu):
+
+    loggedInUser = None
+
     def __getattribute__(self, attr):
         method = object.__getattribute__(self, attr)
         if not method:
@@ -47,11 +50,10 @@ class AuthMenu(BaseMenu):
     def sign_in(self):
         email = self._prompt_utils.input(prompt='Email', validators=None)
         password = self._prompt_utils.input_password(message='Password')
-        self._controller.auth.sign_in(email=email.input_string,
+        self.loggedInUser = self._controller.auth.sign_in(email=email.input_string,
                                       password=password)
 
     def __init__(self, menu, controller):
-
         super().__init__(menu=menu, controller=controller)
         options = [
             FunctionItem("Sign up", self.sign_up),

@@ -8,7 +8,7 @@ from sqlalchemy_utils import database_exists, create_database
 T4U_BASE = declarative_base()
 
 def init_db():
-    engine = create_engine('mysql://admin:N3!Na050N$7v#L%ilr@database-1.cgdhtp70kbhh.us-east-1.rds.amazonaws.com/tool_4_/')
+    engine = create_engine('mysql://root:password@localhost/tool_4_u')
     Session = sessionmaker(bind=engine)
     session = Session()
     if not database_exists(engine.url):
