@@ -12,7 +12,7 @@ class Auth(BaseController):
             last_name=last_name,
             email=email,
             role_id=1,
-            password=bcrypt.encrypt(password),
+            password=bcrypt.hash(password),
         ), 'sign_up')
 
     def sign_in(self, email, password):
