@@ -1,4 +1,4 @@
-from consolemenu import Screen, PromptUtils
+from consolemenu import SelectionMenu
 from consolemenu.items import SubmenuItem
 from consolemenu.validators.regex import RegexValidator
 
@@ -18,6 +18,12 @@ class UserMgmtMenu(BaseMenu):
         level_2 = SubmenuItem("Edit User Details", level_1, menu)
         self._menu.append_item(level_2, T4UMenu.USER_LOGGED_IN)
 
+        level_1_manager = SelectionActionMenu(actions=[
+            {"title": "Edit user role", "action": self.edit_user_role},
+        ])
+        level_2_manager = SubmenuItem("User management", level_1_manager, menu)
+        self._menu.append_item(level_2_manager, T4UMenu.USER_IS_MANAGER)
+
     def edit_first_name(self):
         client = self._controller.get_client()
         print(f"Current Name: {client.first_name}")
@@ -25,7 +31,8 @@ class UserMgmtMenu(BaseMenu):
         first_name = self._prompt_utils.input(prompt='New First name', validators=[RegexValidator("^[a-zA-Z]{2,}$")])
         while not first_name or not first_name.validation_result:
             print("first name is not valid, please try again")
-            first_name = self._prompt_utils.input(prompt='New First Name', validators=[RegexValidator("^[a-zA-Z]{2,}$")])
+            first_name = self._prompt_utils.input(prompt='New First Name',
+                                                  validators=[RegexValidator("^[a-zA-Z]{2,}$")])
 
         self._controller.user_mgmt.change_first_name(client.id, first_name.input_string)
 
@@ -62,4 +69,16 @@ class UserMgmtMenu(BaseMenu):
 
         self._controller.user_mgmt.change_phone_number(client.id, phone.input_string)
 
-
+    def edit_user_role(self):
+        users = self._controller.user_mgmt.edit_user_role()
+        options = SelectionMenu(title="Choose a user",
+                                exit_option_text="Return to Tool 4 You!",
+                                strings=users)
+        options.show()
+        user_id = options.selected_item.text.id
+        roles = self._controller.user_mgmt.edit_user_role(user_id=user_id)
+        options = SelectionMenu(title="Choose a role",
+                                exit_option_text="Return to Tool 4 You!",
+                                strings=roles)
+        options.show()
+        self._controller.user_mgmt.edit_user_role(user_id=user_id, role_id=options.selected_item.text.id)

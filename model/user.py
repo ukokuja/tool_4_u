@@ -11,9 +11,10 @@ class User(T4U_BASE):
     id = Column(Integer, primary_key=True)
     first_name = Column(String(255))
     last_name = Column(String(255))
-    email = Column(String(255))
+    email = Column(String(255), unique=True)
     password = Column(String(255))
     role_id = Column(Integer, ForeignKey('role.id'))
+    role = relationship("Role")
     settings = relationship("Setting")
 
     __mapper_args__ = {
@@ -23,5 +24,4 @@ class User(T4U_BASE):
     }
 
     def __repr__(self):
-        return "<User(id='%s', fullname='%s %s')>" % (
-            self.id, self.first_name, self.last_name)
+        return "%s %s" % (self.first_name, self.last_name)

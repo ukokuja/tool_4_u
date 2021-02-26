@@ -11,7 +11,6 @@ class Client(User, ViewSet):
     plan_id = Column(Integer, ForeignKey('plan.id'))
     plan = relationship("Plan", back_populates="client")
     phone_number = Column(String(63))
-    payment_method = relationship("PaymentMethod", uselist=False, back_populates="client")
 
     __mapper_args__ = {
         'polymorphic_identity': 'client',

@@ -34,14 +34,23 @@ class ControllerManager(object):
     def is_logged_out(self):
         return not self.is_logged_in()
 
+    def is_manager(self):
+        return self.is_logged_in() and self.__client.role.name.lower() in ['manager', 'admin']
+
     def get_client(self):
         return self.__client
 
+    def get_client_id(self):
+        if self.__client:
+            return self.__client.id
+
     def get_client_prop(self, prop):
-        return self.__client[prop]
+        if self.__client:
+            return self.__client[prop]
 
     def get_user_mgmt_functions(self):
         return {
             "is_logged_in": self.is_logged_in,
-            "is_logged_out": self.is_logged_out
+            "is_logged_out": self.is_logged_out,
+            "is_manager": self.is_manager
         }

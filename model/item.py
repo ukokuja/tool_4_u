@@ -19,8 +19,11 @@ class Item(T4U_BASE):
     warehouses = relationship("WarehouseItems", back_populates="item")
 
     def __repr__(self):
-        return "\033[1m%s\033[0m: %s" % (
-            self.title, (self.description[:40] + '..') if len(self.description) > 40 else self.description)
+        count = ""
+        if hasattr(self, 'count'):
+            count = "{} ordered - ".format(self.__getattribute__('count'))
+        return "\033[1m%s\033[0m: %s%s" % (
+            self.title, count, (self.description[:40] + '..') if len(self.description) > 40 else self.description)
 
     def get_full_description(self):
         return "\033[1m%s\033[0m:\n%s\n\n\033[1mComments\033[0m:\n%s" % (

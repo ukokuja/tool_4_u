@@ -3,11 +3,12 @@ from consolemenu import SelectionMenu
 from view.drawer.base_drawer import BaseControlDrawer
 
 
-class ListControlDrawer(BaseControlDrawer):
+class ListWithTypeControlDrawer(BaseControlDrawer):
 
-    def __init__(self, controller, title="Please choose an option"):
+    def __init__(self, controller, title="Please choose an option", type=None):
         super().__init__(controller=controller)
         self.title = title
+        self.type = type
 
     def draw(self, instances):
         options = SelectionMenu(title=self.title,
@@ -19,5 +20,5 @@ class ListControlDrawer(BaseControlDrawer):
 
     def handle(self, options, instances):
         if options.selected_option < len(instances):
-            return instances[options.selected_option], None
+            return instances[options.selected_option], self.type
         return None, None

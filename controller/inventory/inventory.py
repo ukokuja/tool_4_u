@@ -1,10 +1,11 @@
 from controller.base_controller import BaseController
+from model import Item
 
 
 class Inventory(BaseController):
 
     def search(self, title):
-        self._model.notify(self._model.item.query(title=title), 'search_results_by_title')
+        self._model.notify(self._model.item.advanced_query(Item.title.like("%{}%".format(title))), 'search_results_by_title')
 
     def search_by_city(self, city_id):
         city = self._model.city.get(id=city_id)

@@ -1,3 +1,5 @@
+from sqlalchemy import func
+
 
 class ViewSet(object):
 
@@ -9,8 +11,14 @@ class ViewSet(object):
     def query(self, **kwargs):
         return self._session.query(self._entity).filter_by(**kwargs).all()
 
+    def advanced_query(self, query):
+        return self._session.query(self._entity).filter(query).all()
+
     def get_query(self):
         return self._session.query(self._entity)
+
+    def group_by(self, count, column):
+        return self._session.query(func.count(count), column).group_by(count).all()
 
     def list(self):
         return self._session.query(self._entity).all()

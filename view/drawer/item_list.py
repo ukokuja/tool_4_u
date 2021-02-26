@@ -1,6 +1,3 @@
-from consolemenu import SelectionMenu
-
-from view.console.adaptor import SelectionActionMenu
 from view.drawer.base_drawer import BaseControlDrawer
 
 

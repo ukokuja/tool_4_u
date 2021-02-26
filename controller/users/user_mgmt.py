@@ -23,3 +23,16 @@ class UserMgmt(BaseController):
         self._model.notify(self._model.client.update(values={
             "phone_number": phone_number
         }, id=user_id), 'update client phone number')
+
+    def edit_user_role(self, user_id=None, role_id=None):
+        if user_id:
+            if role_id:
+                self._model.notify(self._model.user.update(
+                    values={
+                        "role_id": role_id
+                    }, id=user_id
+                ), 'user_updated')
+            else:
+                return self._model.role.list()
+        else:
+            return self._model.user.list()

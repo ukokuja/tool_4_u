@@ -23,6 +23,7 @@ class SelectionActionMenu(ConsoleMenu):
 
 class T4UMenu(ConsoleMenu):
     USER_LOGGED_IN = "is_logged_in"
+    USER_IS_MANAGER = "is_manager"
     USER_LOGGED_OUT = "is_logged_out"
 
     def __init__(self, **kwargs):

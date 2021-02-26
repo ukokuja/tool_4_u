@@ -52,6 +52,7 @@ class AuthMenu(BaseMenu):
         self.loggedInUser = self._controller.auth.sign_in(email=email.input_string,
                                       password=password)
 
+
     def __init__(self, menu, controller):
         super().__init__(menu=menu, controller=controller)
         options = [
