@@ -1,0 +1,15 @@
+INSERT INTO neighbourhood (id, name, city_id) VALUES (1, 'Kiryat Eliezer Kaplan', 3);
+INSERT INTO neighbourhood (id, name, city_id) VALUES (2, 'Nahal Beka', 5);
+INSERT INTO neighbourhood (id, name, city_id) VALUES (3, 'Bat Galim', 4);
+INSERT INTO neighbourhood (id, name, city_id) VALUES (4, 'Hadar HaCarmel', 4);
+INSERT INTO neighbourhood (id, name, city_id) VALUES (5, 'Kiryat Haim', 4);
+INSERT INTO neighbourhood (id, name, city_id) VALUES (6, 'Afeka', 1);
+INSERT INTO neighbourhood (id, name, city_id) VALUES (7, 'Florentin', 1);
+INSERT INTO neighbourhood (id, name, city_id) VALUES (8, 'Ramat aviv', 1);
+INSERT INTO neighbourhood (id, name, city_id) VALUES (9, 'Bursa', 2);
+INSERT INTO neighbourhood (id, name, city_id) VALUES (10, 'Shikun Vatikim', 2);
+INSERT INTO neighbourhood (id, name, city_id) VALUES (11, 'Herzliya Pituah', 6);
+INSERT INTO neighbourhood (id, name, city_id) VALUES (12, 'Yad Tisha', 6);
+INSERT INTO neighbourhood (id, name, city_id) VALUES (13, 'Pardes Katz', 7);
+INSERT INTO neighbourhood (id, name, city_id) VALUES (14, 'Azor', 8);
+INSERT INTO neighbourhood (id, name, city_id) VALUES (15, 'Moledet', 8);

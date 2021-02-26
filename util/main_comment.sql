@@ -1,0 +1,14 @@
+INSERT INTO comment (id, text, item_id) VALUES (1, 'It works perfect!', 1);
+INSERT INTO comment (id, text, item_id) VALUES (2, 'Very nice product', 1);
+INSERT INTO comment (id, text, item_id) VALUES (3, 'Very helpful!', 2);
+INSERT INTO comment (id, text, item_id) VALUES (4, 'It didn''t work!!! I''m very angry', 2);
+INSERT INTO comment (id, text, item_id) VALUES (5, 'I like this product! Thanks T4U', 3);
+INSERT INTO comment (id, text, item_id) VALUES (6, 'This product is broken!!! :(', 4);
+INSERT INTO comment (id, text, item_id) VALUES (7, 'I didn''t used it..', 5);
+INSERT INTO comment (id, text, item_id) VALUES (8, 'Wow!! I was waiting for this product for a long time!', 6);
+INSERT INTO comment (id, text, item_id) VALUES (9, 'Amazing', 6);
+INSERT INTO comment (id, text, item_id) VALUES (10, 'Best product ever', 7);
+INSERT INTO comment (id, text, item_id) VALUES (11, 'I waited so much! Finally is at my neighboorhoud', 7);
+INSERT INTO comment (id, text, item_id) VALUES (12, 'Nice', 7);
+INSERT INTO comment (id, text, item_id) VALUES (13, 'Excellent', 7);
+INSERT INTO comment (id, text, item_id) VALUES (14, 'Thanks!!!', 7);

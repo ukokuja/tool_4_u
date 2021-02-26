@@ -1,0 +1,3 @@
+INSERT INTO user (id, first_name, last_name, email, password, role_id) VALUES (1, 'Admin', 'Admin', 'admin@gmail.com', '$2b$12$sqHKxe1JabfqcHT1QtJ1UO53dzw6tJ/z.zrB6Y..Q3JEMWa50Oizq', 3);
+INSERT INTO user (id, first_name, last_name, email, password, role_id) VALUES (2, 'Manager', 'Manager', 'manager@gmail.com', '$2b$12$H/jtPV8lupT5v5DuNPv16Oqu/wLSJpjarTo1tvp9uzOMJhvNwCu2K', 2);
+INSERT INTO user (id, first_name, last_name, email, password, role_id) VALUES (3, 'Viewer', 'Viewer', 'viewer@gmail.com', '$2b$12$iyo0Ibw1noskxIg3GMyRAuIFtNJJqrTfIg9e7htYJVkOtQpnQjH/C', 1);
