@@ -38,12 +38,13 @@ class ViewManager(Observer):
         self._controller = controller
         self._menu = T4UMenu(title=TITLE.capitalize(), subtitle=SUBTITLE.capitalize(),
                              user_mgmt_controller=controller.get_user_mgmt_functions())
-        self.auth_menu = AuthMenu(menu=self._menu, controller=self._controller)
         self.inventory_menu = InventoryMenu(menu=self._menu, controller=self._controller)
         self.orders_menu = OrdersMenu(menu=self._menu, controller=self._controller)
         self.user_mgmt_menu = UserMgmtMenu(menu=self._menu, controller=self._controller)
         self.cms_menu = CMSMenu(menu=self._menu, controller=self._controller)
         self.analytics_menu = AnalyticsMenu(menu=self._menu, controller=self._controller)
+        self.auth_menu = AuthMenu(menu=self._menu, controller=self._controller)
+
         self.drawer = {
             "list": ListControlDrawer(controller=self._controller),
             "search_results_by_title": ListControlDrawer(controller=self._controller),
@@ -61,6 +62,7 @@ class ViewManager(Observer):
             "order_created": OrderConfirmedControlDrawer(controller=self._controller),
             "sign_up": ClientControlDrawer(controller=self._controller),
             "sign_in": SignedInControlDrawer(controller=self._controller),
+            "sign_out": MessageDrawer(message="Logged out"),
             "user_updated": MessageDrawer(message="User updated"),
             "logged_out": LoggedOutControlDrawer(controller=self._controller),
             "show_active_orders": ActiveOrdersDrawer(controller=self._controller,
@@ -134,6 +136,8 @@ class ViewManager(Observer):
         if self._controller.is_logged_in():
             self.__client = self._controller.get_client()
             self._menu.subtitle = "{}, {}".format(self.__client.first_name, SUBTITLE)
+        else:
+            self._menu.subtitle = SUBTITLE.capitalize()
 
     def _send_event(self, event_label):
         self._controller.events.send_event(

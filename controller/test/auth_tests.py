@@ -2,9 +2,6 @@ import unittest
 
 from controller.test.utils import ModelMock
 from controller.users.auth import Auth
-from controller.inventory.inventory import Inventory
-from controller.orders.orders import Orders
-
 
 class AuthTest(unittest.TestCase):
 

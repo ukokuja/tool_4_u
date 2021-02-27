@@ -10,7 +10,6 @@ from controller.utils.utils import Utils
 class ControllerManager(object):
     def __init__(self, model):
         self.__client = None
-
         self.auth = Auth(model)
         self.user_mgmt = UserMgmt(model)
         self.orders = Orders(model)
@@ -27,6 +26,7 @@ class ControllerManager(object):
 
     def remove_auth(self):
         self.__client = None
+        self.auth.sign_out()
 
     def is_logged_in(self):
         return self.__client is not None

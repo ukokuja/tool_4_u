@@ -22,3 +22,6 @@ class Auth(BaseController):
         else:
             self._model.notify(None, 'wrong_password')
 
+
+    def sign_out(self):
+        self._model.notify(None, 'sign_out')

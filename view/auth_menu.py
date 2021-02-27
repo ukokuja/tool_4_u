@@ -52,6 +52,9 @@ class AuthMenu(BaseMenu):
         self.loggedInUser = self._controller.auth.sign_in(email=email.input_string,
                                       password=password)
 
+    def sign_out(self):
+        self._controller.remove_auth()
+
 
     def __init__(self, menu, controller):
         super().__init__(menu=menu, controller=controller)
@@ -61,3 +64,5 @@ class AuthMenu(BaseMenu):
         ]
         for options in options:
             self._menu.append_item(options, T4UMenu.USER_LOGGED_OUT)
+
+        self._menu.append_item(FunctionItem("Log out", self.sign_out), T4UMenu.USER_LOGGED_IN)

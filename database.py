@@ -16,15 +16,21 @@ def init_db():
     Session = sessionmaker(bind=engine)
     session = Session()
     if not database_exists(engine.url):
+        print("Creating database")
+        print("Installing modules")
         create_database(engine.url)
         T4U_BASE.metadata.create_all(bind=engine, checkfirst=True)
-        sql = get_sql()
-        buf = io.StringIO(sql)
-        line = buf.readline()
-        while line:
-            result = engine.execute(text(line[:-2]))
-            print(result)
-            session.commit()
-            line = buf.readline()
+        add_fixtures(engine, session)
     session.commit()
     return session
+
+
+def add_fixtures(engine, session):
+    sql = get_sql()
+    buf = io.StringIO(sql)
+    line = buf.readline()
+    while line:
+        print(".", end="")
+        engine.execute(text(line[:-2]))
+        session.commit()
+        line = buf.readline()

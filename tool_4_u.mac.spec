@@ -23,15 +23,11 @@ exe = EXE(pyz,
           a.zipfiles,
           a.datas,
           [],
-          name='Tool 4 You',
+          name='T4U',
           debug=False,
           bootloader_ignore_signals=False,
           strip=False,
           upx=True,
           upx_exclude=[],
           runtime_tmpdir=None,
-          console=False )
-app = BUNDLE(exe,
-             name='Tool 4 You.app',
-             icon=None,
-             bundle_identifier=None)
+          console=True,icon='icon.icns')
