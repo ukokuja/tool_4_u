@@ -15,6 +15,14 @@
 
 Tool 4 U
 =====================================
+##How to use
+The software comes with a fixed DB containing three users:
+1. user: admin@gmail.com | password: pass
+2. user: manager@gmail.com | password: pass
+3. user: viewer@gmail.com | password: pass
+
+New users can be easily created in the software and will be stored in the DB forever.
+
 
 
 ### Instructions ###
