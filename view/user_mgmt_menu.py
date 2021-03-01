@@ -11,7 +11,7 @@ class UserMgmtMenu(BaseMenu):
         super().__init__(menu=menu, controller=controller)
         level_1 = SelectionActionMenu(actions=[
             {"title": "Edit First Name", "action": self.edit_first_name},
-            {"title": "Edit last Name", "action": self.edit_last_name},
+            {"title": "Edit Last Name", "action": self.edit_last_name},
             {"title": "Edit Email", "action": self.edit_email},
             {"title": "Edit Phone Number", "action": self.edit_phone_number},
         ])
@@ -19,9 +19,9 @@ class UserMgmtMenu(BaseMenu):
         self._menu.append_item(level_2, T4UMenu.USER_LOGGED_IN)
 
         level_1_manager = SelectionActionMenu(actions=[
-            {"title": "Edit user role", "action": self.edit_user_role},
+            {"title": "Edit User Role", "action": self.edit_user_role},
         ])
-        level_2_manager = SubmenuItem("User management", level_1_manager, menu)
+        level_2_manager = SubmenuItem("User Management", level_1_manager, menu)
         self._menu.append_item(level_2_manager, T4UMenu.USER_IS_MANAGER)
 
     def edit_first_name(self):
@@ -30,7 +30,7 @@ class UserMgmtMenu(BaseMenu):
 
         first_name = self._prompt_utils.input(prompt='New First name', validators=[RegexValidator("^[a-zA-Z]{2,}$")])
         while not first_name or not first_name.validation_result:
-            print("first name is not valid, please try again")
+            print("First name is not valid, please try again")
             first_name = self._prompt_utils.input(prompt='New First Name',
                                                   validators=[RegexValidator("^[a-zA-Z]{2,}$")])
 
@@ -42,7 +42,7 @@ class UserMgmtMenu(BaseMenu):
 
         last_name = self._prompt_utils.input(prompt='New Last name', validators=[RegexValidator("^[a-zA-Z]{2,}$")])
         while not last_name or not last_name.validation_result:
-            print("last name is not valid, please try again")
+            print("Last name is not valid, please try again")
             last_name = self._prompt_utils.input(prompt='New Last Name', validators=[RegexValidator("^[a-zA-Z]{2,}$")])
 
         self._controller.user_mgmt.change_last_name(client.id, last_name.input_string)
@@ -53,7 +53,7 @@ class UserMgmtMenu(BaseMenu):
 
         email = self._prompt_utils.input(prompt='New Email', validators=[RegexValidator("^\S+@\S+\.\S+$")])
         while not email or not email.validation_result:
-            print("email is not valid, please try again")
+            print("Email is not valid, please try again")
             email = self._prompt_utils.input(prompt='New Email', validators=[RegexValidator("^\S+@\S+\.\S+$")])
 
         self._controller.user_mgmt.change_email(client.id, email.input_string)
@@ -64,7 +64,7 @@ class UserMgmtMenu(BaseMenu):
 
         phone = self._prompt_utils.input(prompt='New Phone Number', validators=[RegexValidator("^[0-9]*$")])
         while not phone or not phone.validation_result:
-            print("phone number is not valid, please try again")
+            print("Phone number is not valid, please try again")
             phone = self._prompt_utils.input(prompt='New Phone Number', validators=[RegexValidator("^[0-9]*$")])
 
         self._controller.user_mgmt.change_phone_number(client.id, phone.input_string)

@@ -22,7 +22,7 @@ class UserMgmt(BaseController):
     def change_phone_number(self, user_id, phone_number):
         self._model.notify(self._model.client.update(values={
             "phone_number": phone_number
-        }, id=user_id), 'update client phone number')
+        }, id=user_id), 'update user phone number')
 
     def edit_user_role(self, user_id=None, role_id=None):
         if user_id:

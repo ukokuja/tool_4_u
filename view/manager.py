@@ -103,7 +103,14 @@ class ViewManager(Observer):
             "neighbourhood_created": MessageDrawer(message="Neighbourhood created"),
             "warehouse_created": MessageDrawer(message="Warehouse created"),
             "item_created": MessageDrawer(message="Item created"),
-            "track_user": ListControlDrawer(controller=self._controller)
+            "track_user": ListControlDrawer(controller=self._controller),
+
+            "update user first name": MessageDrawer(message="First name was changed"),
+            "update user last name": MessageDrawer(message="Last name was changed"),
+            "update user phone number": MessageDrawer(message="Phone number was changed"),
+            "update user email": MessageDrawer(message="Email was changed"),
+
+            "return tool": MessageDrawer(message="Tool was returned"),
 
         }
         self.__client = None
@@ -114,6 +121,7 @@ class ViewManager(Observer):
     def update(self, object, label):
         handler = label
         while object:
+            self._set_name_on_subtitle()
             if handler in self.drawer:
                 object, handler = self.drawer[handler].draw(object)
             elif label in self.drawer:
