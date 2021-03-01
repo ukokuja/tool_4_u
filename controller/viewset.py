@@ -36,4 +36,4 @@ class ViewSet(object):
         self._session.commit()
 
     def delete(self, id):
-        return self._session.delete(self._entity, id=id)
+        return self._session.query(self._entity).filter_by(id=id).delete()

@@ -13,7 +13,7 @@ class WarehouseItems(T4U_BASE):
     warehouse = relationship("Warehouse", back_populates="items")
 
     def get_full_description(self):
-        return "hereeee WarehouseItems"
+        return ""
 
     def __repr__(self):
         return "Warehouse: %s - %s | %s availables" % (self.warehouse.neighbourhood.name, self.warehouse.neighbourhood.city.name, self.count)

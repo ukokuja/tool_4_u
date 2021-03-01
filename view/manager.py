@@ -111,7 +111,14 @@ class ViewManager(Observer):
             "update user email": MessageDrawer(message="Email was changed"),
 
             "return tool": MessageDrawer(message="Tool was returned"),
-
+            "city_edited": MessageDrawer(message="City modified"),
+            "city_removed": MessageDrawer(message="City removed"),
+            "neighbourhood_edited": MessageDrawer(message="Neighbourhood modified"),
+            "warehouse_edited": MessageDrawer(message="Warehouse modified"),
+            "item_edited": MessageDrawer(message="Item modified"),
+            "neighbourhood_removed": MessageDrawer(message="Neighbourhood removed"),
+            "warehouse_removed": MessageDrawer(message="Warehouse removed"),
+            "item_removed": MessageDrawer(message="Item removed"),
         }
         self.__client = None
 
