@@ -15,6 +15,6 @@ class InventoryTest(unittest.TestCase):
     def test_search_by_title(self):
         self.inventory.search(title="title")
         response = self.inventory._model.get_response()
-        self.assertEqual(response[0], {'title': 'title'})
+        self.assertEqual(str(response[0]), 'item.title LIKE :title_1')
         self.assertEqual(response[1], 'search_results_by_title')
 
